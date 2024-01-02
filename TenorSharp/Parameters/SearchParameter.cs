@@ -22,8 +22,8 @@ namespace TenorSharp.Parameters
             NameValueCollection parameters = HttpUtility.ParseQueryString(string.Empty);
             parameters["key"] = apiKey;
 
-            if (limit > 50)
-                throw new Exception("Limit can not be over 50.");
+            if (limit > 50 || limit < 0)
+                throw new Exception("Limit has to be over 0 and under 50");
 
             if (!string.IsNullOrEmpty(query)) parameters["q"] = query;
             if (searchFilter != null) parameters["searchfilter"] = searchFilter.ToString();
