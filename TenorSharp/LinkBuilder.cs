@@ -47,15 +47,12 @@ namespace TenorSharp
     public enum ApiModes
     {
         search,
-        trending,
+        featured,
         categories,
         search_suggestions,
         autocomplete,
         trending_terms,
         registershare,
-        gifs,
-        random,
-        anonid,
-
+        posts
     }
 }
