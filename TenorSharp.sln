@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenorSharp", "TenorSharp\TenorSharp.csproj", "{B13FE336-77A9-40A8-B2C7-78186033CA47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{0720B164-2D2F-449A-BBE1-F74EF752916C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B13FE336-77A9-40A8-B2C7-78186033CA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B13FE336-77A9-40A8-B2C7-78186033CA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B13FE336-77A9-40A8-B2C7-78186033CA47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0720B164-2D2F-449A-BBE1-F74EF752916C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0720B164-2D2F-449A-BBE1-F74EF752916C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0720B164-2D2F-449A-BBE1-F74EF752916C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0720B164-2D2F-449A-BBE1-F74EF752916C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
