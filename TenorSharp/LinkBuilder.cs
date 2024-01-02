@@ -22,6 +22,10 @@ namespace TenorSharp
             _builder = new UriBuilder(_apiBase + Enum.GetName(typeof(ApiModes), mode));
         }
 
+        /// <summary>
+        /// Adds parameters to the api link
+        /// </summary>
+        /// <param name="parameters">Parameters to add</param>
         public void AddParameters(NameValueCollection parameters)
         {
             _parameters = parameters;
@@ -33,7 +37,6 @@ namespace TenorSharp
         /// <returns>Tenor API url</returns>
         public string Build()
         {
-            Console.WriteLine("PArams: " + _parameters.ToString());
             _builder.Query = _parameters.ToString();
             Uri tenorUrl = _builder.Uri;
 
