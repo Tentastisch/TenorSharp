@@ -8,7 +8,7 @@ namespace TenorSharp.Models
 {
     public class SearchResults
     {
-        public List<SearchResult> results { get; set; }
+        public SearchResult[] results { get; set; }
     }
 
     public class SearchResult
