@@ -7,13 +7,15 @@ namespace TenorSharp.Parameters
     public class SearchParameter
     {
         public string? query { get; set; }
+        public SearchFilter? searchFilter { get; set; }
+        public string? country { get; set; }
         public string? locale { get; set; }
-        public MediaFilter mediaFilter = MediaFilter.basic;
-        public ArRange arRange = ArRange.all;
         public ContentFilter contentFilter = ContentFilter.off;
+        public string? mediaFilter { get; set; }
+        public ArRange arRange = ArRange.all;
+        
         public int limit = 20;
         public string? pos { get; set; }
-        public string? anonId { get; set; }
 
         public NameValueCollection Build(string apiKey)
         {
@@ -24,15 +26,14 @@ namespace TenorSharp.Parameters
                 throw new Exception("Limit can not be over 50.");
 
             if (!string.IsNullOrEmpty(query)) parameters["q"] = query;
+            if (searchFilter != null) parameters["searchfilter"] = searchFilter.ToString();
+            if (!string.IsNullOrEmpty(country)) parameters["country"] = country;
             if (!string.IsNullOrEmpty(locale)) parameters["locale"] = locale;
-
-            parameters["media_filter"] = Enum.GetName(typeof(MediaFilter), mediaFilter);
-            parameters["ar_range"] = Enum.GetName(typeof(ArRange), arRange);
-            parameters["contentfilter"] = Enum.GetName(typeof(ContentFilter), contentFilter);
-            parameters["limit"] = limit.ToString();
-
+            if (!string.IsNullOrEmpty(mediaFilter)) parameters["media_filter"] = mediaFilter;
             if (!string.IsNullOrEmpty(pos)) parameters["pos"] = pos;
-            if (!string.IsNullOrEmpty(anonId)) parameters["anon_id"] = anonId;
+            parameters["contentfilter"] = Enum.GetName(typeof(ContentFilter), contentFilter);
+            parameters["ar_range"] = Enum.GetName(typeof(ArRange), arRange);
+            parameters["limit"] = limit.ToString();
 
             return parameters;
         }
